@@ -1,0 +1,17 @@
+import csv
+
+f = open("forestfires.csv", newline = '') #this file needs to exist
+reader = csv.reader(f)
+
+header = next(reader)
+
+# This next line magically turns the csv file into a GIANT list.
+# If there's two columns, each element has a sublist of two values
+# If there's three columns, each element has a sublist of three values etc. etc.
+dataListed= [row for row in reader] 
+
+#print(dataListed) #prints the list. Yes it's an ugly mess of list within lists but..
+
+
+#now we can pick the first row using
+print("The first row is ", (dataListed[0]))
